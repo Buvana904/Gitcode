@@ -1,0 +1,53 @@
+#add 2 arguments using lambda fn
+add = lambda a,b : a + b
+add (2,3)
+
+#passing single argument
+add = lambda x : x + 100
+add (10)
+
+#Without explicitly assigning a variable for lambda called as IIFA ( Immediately Invoked Fn Exp)
+(lambda a , b : a * b) (5, 7)
+
+#When passing the value, it can be in any order
+product = lambda a, b, c : a * b *c
+print(product (c=3,b=2,a=1))
+
+#can pass only the arguments needed
+add = lambda a, b = 2, c = 5 : a * b *c
+print(add (10))
+
+#Can pass as many arguments as we can
+add = lambda *args : sum( args )
+print(add(2,3,5,10,10,50))
+
+#Lamda takes function as arguments called higher order function
+higher_order_fn = lambda x, fun : x + fun(x)
+higher_order_fn(20, lambda x : x * x)
+
+#To display the number in even
+(lambda x : (x % 2 and 'odd' or 'even'))(15)
+
+#To check substring of the given string
+sub_string = lambda string : string in "Welcome to ITC"
+print(sub_string('python'))
+
+#Using lambda to filter the list of numbers
+num = [20,10,40,35,63,33]
+greater = list(filter(lambda num : num > 30, num))
+print(greater)
+
+#To list the numbers divisible using lambda
+num1 = [45,35,67,32,40]
+divide = list(filter( lambda num1 : num1%5 == 0, num1))
+print(divide)
+
+#map has arguments and exp, takes every element from list and returns modified list
+num2 = [45,35,67,32,40]
+double_the_num = list(map(lambda num2 : num2 * 2, num2))
+print(double_the_num)
+
+#Cube the number using map
+num3 = [2,5,4,6,7]
+cube = map(lambda x : pow( x,3)), num3
+list(cube)
