@@ -1,0 +1,150 @@
+====using case class
+
+object Main {
+  def main(args: Array[String]) {
+
+    var i=2
+    var str1 = i match {
+      case 1 => "One"
+      case 2 => "two"
+      case 3 => "three"
+    }
+    println(str1)
+
+    //pattern matching using case class
+    case class employee(id: Int, employee_name: String) //case class
+    val a = employee(1,"Buvana11")
+    a match {
+      case employee(1, "Buvana") => println ("Hello Buvana")
+      case employee(2, "Ewo") => println ("Ewo")
+      case employee(id, employee_name) => println("ID: " + id + ", Employee:" + employee_name)
+    }
+
+  }
+}
+
+=====using function 
+
+object functionDemo {
+
+  def sum(num1:Int,num2:Int):Int = {
+    return num1+num2
+  }
+  def main(args: Array[String]): Unit = {
+    println( sum(num1=2,num2=3))
+  }
+}
+
+=====anonymous fn
+
+  var fun1 = (num1:Int,num2:Int) => num1+num2
+
+  def main(args: Array[String]): Unit = {
+    println(fun1)
+  }
+  val lst = list[10,20,30]
+  val outlst = lst.map(i => i+1)
+  println(outlst)
+
+
+=====assign string 
+
+class Person {
+  //class variables
+  var pid: Int=101
+  private[this] var _fname: String = ""
+
+  def fname: String = _fname
+
+  def fname_=(value: String): Unit = {
+    _fname = value
+  }
+
+====Helloworld
+
+object HelloWorld1 {
+  def main(args: Array[String]) {
+
+    println("Hello, world!")
+  }
+
+}
+
+====using Interpolation to print the string
+
+object HelloWorld1 {
+  def main(args: Array[String]) {
+    val name = "mark"
+    val age = 18
+    println(name + " is " + age+ " years old ")
+
+    //S String interpolation(another way to print)
+    println(s"$name is $age years old")
+
+    // f string interpolation
+    println(f"$name%s is $age%f years old")
+
+    //raw string interpolation
+    println(s"Hello \nworld")
+    println("Hello, world!")
+  }
+
+}
+
+}
+
+=====if else
+
+object sample {
+  def main(args: Array[String]): Unit = {
+    val x = 20;
+    var res = ""
+
+    if (x == 20){
+      println("x==20");
+      // using the res variable
+      res = "x == 20"
+    } else {
+      println("x != 20");
+      // using the res variable
+      res = "x != 20"
+    }
+      println(res);
+    
+    // or can also printed in one line
+    val res2 = if (x == 20) "x == 20" else "x !=20"
+        
+    
+  }
+
+}
+
+
+=====while and do while
+
+
+object whileloop {
+  def main(args: Array[String]): Unit = {
+    var x = 0;
+
+    while (x < 10) {
+      println("x = "+ x)
+      x += 1; //x = x + 1
+    }
+
+    // do while loop
+    // It prints once even if the while loop is false
+
+    var y = 0;
+    do {
+      println("y = " + y);
+      y +=1;
+    } while (y < 0)
+  }
+
+}
+
+
+===For loops in scala
+
+
